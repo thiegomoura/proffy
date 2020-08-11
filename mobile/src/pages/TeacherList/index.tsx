@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
-import { View, ScrollView, AsyncStorage } from 'react-native';
-import styles from './styles';
-
-import PageHeader from '../../Components/PageHeader';
-import TeacherItem, { Teacher } from '../../Components/TeacherItem';
 import { useFocusEffect } from '@react-navigation/native';
 import { RectButton, BorderlessButton } from 'react-native-gesture-handler';
+import { View, ScrollView, Text, AsyncStorage, TextInput } from 'react-native';
+
+import PageHeader from '../../components/PageHeader';
+import TeacherItem, { Teacher } from '../../components/TeacherItem';
+import api from '../../services/api';
+import { Feather } from "@expo/vector-icons/";
+
+import styles from './styles';
 
 function TeacherList() {
     const [isFiltersVisible, setIsFiltersVisible] = useState(false);
